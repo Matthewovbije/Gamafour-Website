@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Gamafour Integrated Systems — Integrated HSE, Environmental, ESG and Risk Management Solutions." />
+  <title>Gamafour Integrated Systems</title>
+
+  <style>
+    :root{
+      --navy:#0b1f3b;
+      --slate:#4b5563;
+      --ink:#0f172a;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --line:#e5e7eb;
+      --green:#16a34a;
+      --green-2:#22c55e;
+      --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--ink); background:linear-gradient(180deg,#f8fbff, var(--bg));}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:rgba(248,251,255,.82);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{display:flex; gap:10px; align-items:center}
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background:radial-gradient(120% 120% at 20% 20%, var(--green-2), var(--green) 55%, #0a7a35 100%);
+      box-shadow:0 10px 25px rgba(22,163,74,.22);
+      display:grid; place-items:center; color:white; font-weight:800;
+    }
+    .brand h1{font-size:14px; margin:0; letter-spacing:.2px}
+    .brand p{margin:0; font-size:12px; color:var(--slate)}
+    .links{display:flex; gap:16px; align-items:center}
+    .links a{font-size:13px; color:#243b53; opacity:.9}
+    .cta{
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--navy); color:white;
+      border:1px solid rgba(255,255,255,.12);
+      padding:10px 14px; border-radius:14px; font-size:13px;
+      box-shadow:0 10px 20px rgba(11,31,59,.12);
+    }
+    .cta:hover{transform:translateY(-1px)}
+    .hero{
+      padding:64px 0 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-140px -120px auto -120px;
+      height:420px;
+      background:
+        radial-gradient(closest-side, rgba(34,197,94,.18), transparent 70%),
+        radial-gradient(closest-side, rgba(11,31,59,.12), transparent 68%),
+        radial-gradient(closest-side, rgba(34,197,94,.10), transparent 65%);
+      filter:blur(0px);
+      pointer-events:none;
+    }
+    .grid{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:26px; align-items:stretch;
+    }
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} .links{display:none} }
+    .headline{
+      position:relative;
+      background:rgba(255,255,255,.7);
+      border:1px solid rgba(229,231,235,.7);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      background:rgba(22,163,74,.10);
+      border:1px solid rgba(22,163,74,.22);
+      color:#065f2a; font-size:12px; font-weight:650;
+    }
+    .kdot{width:8px; height:8px; border-radius:99px; background:var(--green)}
+    .headline h2{
+      margin:14px 0 10px;
+      font-size:40px; line-height:1.07;
+      color:var(--navy);
+      letter-spacing:-.6px;
+    }
+    .headline h2 span{color:var(--green)}
+    .headline p{
+      margin:0 0 18px; color:#334155; font-size:15px; line-height:1.6;
+      max-width:62ch;
+    }
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid rgba(229,231,235,.9);
+      background:white; font-size:13px; color:#0f172a;
+      box-shadow:0 8px 18px rgba(2,6,23,.06);
+    }
+    .btn.primary{
+      background:var(--navy); color:white; border-color:rgba(11,31,59,.2);
+    }
+    .btn .ic{width:16px; height:16px; opacity:.95}
+    .panel{
+      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.75));
+      border:1px solid rgba(229,231,235,.7);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .panel h3{margin:0 0 10px; color:var(--navy); font-size:15px}
+    .statgrid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px}
+    .stat{
+      border:1px solid rgba(229,231,235,.8);
+      background:white;
+      border-radius:16px;
+      padding:14px;
+    }
+    .stat b{display:block; font-size:18px; color:var(--navy); margin-bottom:4px}
+    .stat small{color:var(--slate); font-size:12px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top:14px;
+      padding:10px 12px; border-radius:16px;
+      border:1px dashed rgba(22,163,74,.35);
+      background:rgba(22,163,74,.06);
+      color:#0b3d1f;
+      font-size:12px;
+    }
+    .section{padding:30px 0}
+    .title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin-bottom:14px;
+    }
+    .title h4{margin:0; font-size:18px; color:var(--navy)}
+    .title p{margin:0; color:var(--slate); font-size:13px; max-width:66ch}
+    .cards{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+    @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(229,231,235,.85);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 10px 24px rgba(2,6,23,.06);
+      min-height:140px;
+    }
+    .card .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px; border-radius:999px;
+      background:rgba(11,31,59,.06);
+      border:1px solid rgba(11,31,59,.10);
+      color:#0b1f3b;
+      font-size:12px; font-weight:650;
+      margin-bottom:10px;
+    }
+    .card h5{margin:0 0 8px; color:var(--navy); font-size:14px}
+    .card p{margin:0; color:#334155; font-size:13px; line-height:1.55}
+    .why{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    @media (max-width: 920px){ .why{grid-template-columns:1fr} }
+    .list{
+      background:white;
+      border:1px solid rgba(229,231,235,.85);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 10px 24px rgba(2,6,23,.06);
+    }
+    .list h5{margin:0 0 10px; color:var(--navy); font-size:14px}
+    .li{display:flex; gap:10px; padding:10px 0; border-top:1px solid rgba(229,231,235,.7)}
+    .li:first-of-type{border-top:none}
+    .tick{
+      width:22px; height:22px; border-radius:8px;
+      background:rgba(22,163,74,.12);
+      border:1px solid rgba(22,163,74,.28);
+      display:grid; place-items:center; color:var(--green);
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .li b{display:block; font-size:13px; color:#0b1f3b; margin-bottom:2px}
+    .li span{display:block; font-size:12px; color:var(--slate); line-height:1.45}
+    .contact{
+      background:linear-gradient(180deg, rgba(11,31,59,.06), rgba(22,163,74,.05));
+      border:1px solid rgba(229,231,235,.75);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){ .contact{grid-template-columns:1fr} }
+    .contact h4{margin:0 0 8px; color:var(--navy); font-size:16px}
+    .contact p{margin:0; color:#334155; font-size:13px; line-height:1.6}
+    .contactbox{
+      background:white;
+      border:1px solid rgba(229,231,235,.85);
+      border-radius:18px;
+      padding:14px;
+    }
+    .field{display:flex; gap:10px; align-items:center; padding:10px 0; border-top:1px solid rgba(229,231,235,.7)}
+    .field:first-of-type{border-top:none}
+    .label{font-size:12px; color:var(--slate); min-width:86px}
+    .value{font-size:13px; color:#0f172a; font-weight:650; word-break:break-word}
+    .footer{
+      padding:28px 0 42px; color:var(--slate); font-size:12px;
+    }
+    .footer .row{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+    .smallcap{letter-spacing:.22px; text-transform:uppercase; font-size:11px; color:#64748b}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(229,231,235,.85);
+      background:white;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="mark">G4</div>
+        <div>
+          <h1>Gamafour Integrated Systems</h1>
+          <p>Governance • Risk • Compliance • Assurance</p>
+        </div>
+      </div>
+      <nav class="links">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div class="headline">
+          <div class="kicker"><span class="kdot"></span> Global consulting for industrial & infrastructure operations</div>
+          <h2>Integrated <span>HSE</span>, Environmental & ESG solutions—built as a <span>system</span>.</h2>
+          <p>
+            We deliver integrated Health, Safety, Environmental, ESG, and risk management solutions through engineered governance and
+            compliance frameworks that drive operational integrity and sustainable performance.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Request a consultation
+            </a>
+            <a class="btn" href="#services">
+              <svg class="ic" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              View services
+            </a>
+          </div>
+          <div class="badge">
+            <strong>Note:</strong>&nbsp;Official communications via <b>info@gamafour.com</b>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Capability snapshot">
+          <h3>Capability snapshot</h3>
+          <div class="statgrid">
+            <div class="stat">
+              <b>Audit-ready</b>
+              <small>Controls, evidence, and traceability.</small>
+            </div>
+            <div class="stat">
+              <b>Risk-led</b>
+              <small>Prioritisation aligned to exposure.</small>
+            </div>
+            <div class="stat">
+              <b>Regulatory</b>
+              <small>Compliance mapping & assurance.</small>
+            </div>
+            <div class="stat">
+              <b>Systems</b>
+              <small>Integrated frameworks, not patches.</small>
+            </div>
+          </div>
+          <div class="badge" style="margin-top:14px">
+            <span style="width:10px;height:10px;border-radius:99px;background:var(--navy);display:inline-block"></span>
+            ISO-aligned management system approach (context-specific)
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="wrap">
+        <div class="title">
+          <h4>Services</h4>
+          <p>Built for contractors, asset owners, operators, and project environments that demand tight control and defensible compliance.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="chip">Integrated management systems</div>
+            <h5>HSE Management System Design & Implementation</h5>
+            <p>Policy-to-procedure architecture, operational controls, inspections, KPIs, and continuous improvement.</p>
+          </div>
+
+          <div class="card">
+            <div class="chip">Risk engineering</div>
+            <h5>Risk Assessments & Critical Control Verification</h5>
+            <p>Task risk assessments, bowties/controls, field verification, and risk register optimisation.</p>
+          </div>
+
+          <div class="card">
+            <div class="chip">Assurance</div>
+            <h5>Audits, Compliance Reviews & Gap Assessments</h5>
+            <p>ISO/industry-aligned audits, legal registers, corrective actions, close-out tracking and evidence packs.</p>
+          </div>
+
+          <div class="card">
+            <div class="chip">Environmental</div>
+            <h5>Environmental Compliance & Monitoring Support</h5>
+            <p>CEMP support, waste & emissions controls, monitoring coordination, and regulatory reporting readiness.</p>
+          </div>
+
+          <div class="card">
+            <div class="chip">ESG</div>
+            <h5>ESG Frameworks, Reporting & Performance Support</h5>
+            <p>Materiality, governance integration, KPIs, and practical implementation support for real operations.</p>
+          </div>
+
+          <div class="card">
+            <div class="chip">Capability</div>
+            <h5>Training, Coaching & Competency Programs</h5>
+            <p>Role-based competency development, toolbox programs, leadership engagement, and safety culture reinforcement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section">
+      <div class="wrap">
+        <div class="title">
+          <h4>Why Gamafour Integrated Systems</h4>
+          <p>Because clients don’t need “documents.” They need operational control that stands up in the field and under scrutiny.</p>
+        </div>
+
+        <div class="why">
+          <div class="list">
+            <h5>How we work</h5>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Systems-first delivery</b>
+                <span>We build integrated frameworks that make compliance repeatable and measurable.</span>
+              </div>
+            </div>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Evidence-based assurance</b>
+                <span>Controls are verified; close-outs are tracked; evidence is organized for audits and clients.</span>
+              </div>
+            </div>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Risk-led prioritization</b>
+                <span>We focus on critical exposures—not cosmetic activities that waste time.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="list">
+            <h5>What you get</h5>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Audit-ready packages</b>
+                <span>Structured registers, logs, and close-out evidence packs—ready to submit.</span>
+              </div>
+            </div>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Operational control</b>
+                <span>Practical controls implemented on site—aligned to real constraints and timelines.</span>
+              </div>
+            </div>
+            <div class="li">
+              <div class="tick">✓</div>
+              <div>
+                <b>Scalable governance</b>
+                <span>Frameworks you can expand as your projects and contracts grow.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <h4>Contact</h4>
+            <p>
+              For proposals, audits, project support, or advisory engagements, contact us via the addresses below.
+              We respond fast and keep communications structured.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="pill"><span class="smallcap">Primary</span> <b>info@gamafour.com</b></span>
+              <span class="pill"><span class="smallcap">Admin</span> <b>admin@gamafour.com</b></span>
+            </div>
+          </div>
+          <div class="contactbox">
+            <div class="field">
+              <div class="label">Email</div>
+              <div class="value">info@gamafour.com</div>
+            </div>
+            <div class="field">
+              <div class="label">Operations</div>
+              <div class="value">admin@gamafour.com</div>
+            </div>
+            <div class="field">
+              <div class="label">Website</div>
+              <div class="value">www.gamafour.com</div>
+            </div>
+            <div class="field">
+              <div class="label">Location</div>
+              <div class="value">Abu Dhabi • Global Delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="row">
+          <div>© <span id="y"></span> Gamafour Integrated Systems. All rights reserved.</div>
+          <div class="smallcap">Governance • Risk • Compliance • Assurance</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html> 
