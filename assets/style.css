@@ -92,7 +92,8 @@ h1{font-size:40px; line-height:1.15; margin:0 0 12px}
   background:white;
   border:1px solid var(--line);
   border-radius:16px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 25px rgba(15, 31, 46, 0.06);
+
 }
 .card.pad{padding:18px}
 
@@ -236,4 +237,20 @@ h2 {
   font-weight: 800;
   color: #0f1f2e;
   margin-bottom: 20px;
+}
+.hero {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  margin-top: 10px;
+}
+.section {
+  border-top: 1px solid #f0f0f0;
 }
