@@ -215,3 +215,18 @@ textarea{min-height:140px; resize:vertical}
   line-height: 1.6;
   color: #4b5b68;
 }
+/* STEP 2: Page headings upgrade (Services / About / Contact) */
+h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  font-weight: 800;
+  color: #0f1f2e;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #0f1f2e;
+}
