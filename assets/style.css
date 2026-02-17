@@ -213,3 +213,9 @@ textarea{min-height:140px; resize:vertical}
 .hero .btn-primary {
   margin-top: 20px;
 }
+.section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #0f1f2e;
+}
