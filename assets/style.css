@@ -230,3 +230,10 @@ h2 {
   font-weight: 700;
   color: #0f1f2e;
 }
+/* STEP 3: Force styling for main page titles */
+.section h2:first-of-type {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f1f2e;
+  margin-bottom: 20px;
+}
