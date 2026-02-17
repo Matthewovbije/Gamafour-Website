@@ -182,3 +182,11 @@ textarea{min-height:140px; resize:vertical}
   letter-spacing:.3px;
   white-space:nowrap;    /* keeps tagline in one line */
 }
+.footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  background: #0f1f2e;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
