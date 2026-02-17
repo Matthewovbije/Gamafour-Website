@@ -158,3 +158,27 @@ textarea{min-height:140px; resize:vertical}
   h1{font-size:34px}
   .brand{min-width:unset}
 }
+/* ===============================
+   BRAND / HEADER LOGO SECTION
+=================================*/
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;              /* space between logo and tagline */
+  text-decoration:none;
+  color:inherit;
+}
+
+.brand img{
+  height:54px;           /* adjust if needed (48–60px) */
+  width:auto;
+  display:block;
+}
+
+.brand .sub{
+  font-size:14px;
+  color:#5a6a7a;
+  letter-spacing:.3px;
+  white-space:nowrap;    /* keeps tagline in one line */
+}
